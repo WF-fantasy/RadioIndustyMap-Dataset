@@ -2,30 +2,47 @@
 
 **RadioIndustryMap** is a large-scale, high-fidelity, time-varying electromagnetic (EM) / radio map dataset designed for **Electromagnetic Map Reconstruction**, **Radio Environment Mapping (REM)**, and **6G Industrial Internet of Things (IIoT)** research.
 
-Unlike conventional radio map datasets that mainly focus on static base stations in simplified urban concrete-canyon environments, RadioIndustryMap targets realistic industrial and offshore scenarios with **mobile transmitters**, **dynamic radio propagation**, **heterogeneous material compositions**, and **complex industrial geometries**. The dataset explicitly models representative material categories such as **metal, concrete, vegetation, road surfaces, water surfaces, industrial facilities, and moving vessels**, enabling research on radio map reconstruction under realistic and safety-critical industrial wireless conditions.
+Unlike conventional radio map datasets that mainly focus on static base stations in simplified urban concrete-canyon environments, RadioIndustryMap targets realistic industrial and offshore scenarios with **mobile transmitters**, **dynamic radio propagation**, **heterogeneous material compositions**, and **complex industrial geometries**. The dataset explicitly models representative industrial materials and objects, including **metal structures, concrete buildings, vegetation, road surfaces, water surfaces, industrial facilities, containers, pipelines, storage tanks, and moving vessels**.
+
+> **Current release status:**  
+> This repository currently provides representative sample data and visualization examples for demonstration purposes. The complete RadioIndustryMap dataset will be publicly released after the corresponding paper is accepted.
 
 This repository provides the dataset described in our paper:
 
 > **[Paper Title Will Be Updated]**
 
-The full citation will be provided after the paper is accepted and published.
+The full paper information and dataset citation will be updated after acceptance.
 
 ---
 
 ## Citation
 
-If you use RadioIndustryMap in your research, please cite our paper.
+The citation information will be provided after the corresponding paper is accepted and published.
 
-```bibtex
-@inproceedings{radioindustrymap2026,
-  title     = {RadioIndustryMap: A Large-Scale Dynamic Radio Map Dataset for Industrial Wireless Environments},
-  author    = {Author Names Will Be Updated},
-  booktitle = {IEEE ICC / IEEE GLOBECOM},
-  year      = {2026}
-}
-```
+Please stay tuned for updates.
 
-Citation details will be updated after publication.
+---
+
+## Dataset Availability
+
+At the current stage, this repository only releases a subset of representative examples, including sample radio maps, visualization figures, and partial metadata. These samples are intended to help users understand the data format, directory organization, and potential research tasks supported by RadioIndustryMap.
+
+The full dataset will be released after the paper is accepted. The complete release is expected to include approximately:
+
+| Item | Description |
+|---|---|
+| Number of scenes | Approximately 400 scenes |
+| Number of samples | Approximately 400,000 radio map samples |
+| Scenario types | Automated chemical plants, smart container ports, offshore industrial zones, moving-vessel scenarios |
+| Frequency bands | 11 frequency bands |
+| Receiver heights | 5 receiver heights |
+| Temporal frames | 50 frames per dynamic sequence |
+| Time interval | 2 seconds |
+| Grid size | 512 × 512 |
+| Spatial resolution | 3 m per grid cell |
+| Physical coverage | 1536 m × 1536 m per radio map |
+
+The current sample release should not be regarded as the final benchmark version. The final dataset, benchmark splits, and detailed metadata will be updated together with the full release.
 
 ---
 
@@ -83,7 +100,7 @@ RadioIndustryMap covers representative industrial and offshore environments, inc
 - Moving-vessel scenarios;
 - Large-scale industrial factory areas.
 
-These environments are much more complex than regular urban blocks. They contain irregular industrial layouts, dense metallic facilities, large open spaces, water surfaces, and moving objects. As a result, the dataset can better represent the propagation characteristics of practical 6G IIoT systems.
+These environments are much more complex than regular urban blocks. They contain irregular industrial layouts, dense metallic facilities, large open spaces, water surfaces, vegetation regions, road networks, and moving objects. As a result, the dataset can better represent the propagation characteristics of practical 6G IIoT systems.
 
 ---
 
@@ -105,7 +122,7 @@ This material-aware design enables the dataset to capture strong metal-induced r
 
 RadioIndustryMap supports multiple frequency bands and receiver heights. This enables the study of frequency-dependent and height-dependent propagation characteristics.
 
-The current release includes the following frequency bands:
+The complete dataset will include the following frequency bands:
 
 ```text
 500 MHz, 700 MHz, 900 MHz, 1500 MHz, 1800 MHz, 2000 MHz,
@@ -124,7 +141,7 @@ These receiver heights correspond to different industrial communication layers, 
 
 ### 5. Large-Scale High-Fidelity Dataset
 
-RadioIndustryMap contains approximately:
+The complete RadioIndustryMap dataset is designed to contain approximately:
 
 | Item | Description |
 |---|---|
@@ -220,9 +237,11 @@ The following figures are placeholders. Please replace them with real images fro
 
 ## Download
 
-The dataset can be accessed through the following cloud storage link:
+Representative sample data are currently available through the following cloud storage link:
 
-- Baidu Netdisk: [Link will be updated]()
+- Baidu Netdisk: [Sample data link will be updated]()
+
+The full RadioIndustryMap dataset will be released after the corresponding paper is accepted.
 
 Additional download links, such as Google Drive or OneDrive, may be provided in future releases.
 
@@ -499,24 +518,24 @@ RadioIndustryMap can support a wide range of research tasks, including:
 
 ## Data Split Recommendation
 
-To avoid data leakage, we recommend splitting the dataset by **scenario index** rather than randomly splitting individual temporal frames from the same sequence.
+The current sample release is mainly intended for format demonstration and preliminary testing. For the full dataset release, we recommend splitting the dataset by **scenario index** rather than randomly splitting individual temporal frames from the same sequence.
 
 For example:
 
 ```text
-Training set:     map1  - map280
-Validation set:   map281 - map340
-Test set:         map341 - map400
+Training set:      map1   - map280
+Validation set:    map281 - map340
+Test set:          map341 - map400
 ```
 
 For temporal prediction tasks, users may also split each sequence by time:
 
 ```text
-Input frames:     t = 1, 2, ..., 40
-Prediction frames: t = 41, 42, ..., 50
+Input frames:       t = 1, 2, ..., 40
+Prediction frames:  t = 41, 42, ..., 50
 ```
 
-The exact split can be adjusted according to the target task.
+The final official split will be updated after the full dataset is released.
 
 ---
 
@@ -538,11 +557,13 @@ The benchmark results are:
 
 The results show that industrial radio map reconstruction is significantly more challenging than conventional urban radio map reconstruction. The complex industrial geometry, heterogeneous material composition, strong metallic reflection, dynamic blockage, and non-stationary fading effects pose substantial challenges to existing learning-based methods.
 
+The benchmark results may be updated when the full dataset and official train/validation/test splits are released.
+
 ---
 
 ## Notes
 
-1. The current dataset release contains approximately 400 scenes and 400,000 radio map samples.
+1. This repository currently provides representative sample data only. The full dataset will be released after the corresponding paper is accepted.
 
 2. RadioIndustryMap is generated for academic research on radio map reconstruction, radio environment mapping, and 6G industrial wireless communication.
 
@@ -556,9 +577,9 @@ The results show that industrial radio map reconstruction is significantly more 
 
 ## License
 
-The license information will be updated before the public release.
+The license information will be updated before the public release of the full dataset.
 
-For academic use, please cite the corresponding paper and this repository.
+The currently released sample data are provided for academic demonstration and preliminary research only.
 
 ---
 
