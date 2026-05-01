@@ -1,59 +1,25 @@
-# RadioIndustyMap-Dataset
-该仓库提供论文《》中描述的数据集。
+# RadioIndustryMap
 
-## 引用
+**RadioIndustryMap** is a large-scale, high-fidelity, time-varying electromagnetic (EM) / radio map dataset designed for **Electromagnetic Map Reconstruction**, **Radio Environment Mapping (REM)**, and **6G Industrial Internet of Things (IIoT)** research.
 
-论文发表于会议论文集后，完整的引用将在此处提供。请持续关注最新动态。
+Unlike conventional radio map datasets that mainly focus on static transmitters and simplified urban concrete-canyon environments, RadioIndustryMap targets complex industrial and offshore scenarios with **dynamic mobile sources**, **heterogeneous material compositions**, and **realistic industrial geometries**. The dataset explicitly considers key industrial materials and objects, including **metal structures, concrete buildings, vegetation, roads, ports, factory facilities, and moving vessels**, making it suitable for studying radio map reconstruction in realistic and safety-critical industrial environments.
 
-```
-[Citation details will be updated here]
-```
+This repository provides the dataset described in our paper:
 
-## 数据集描述
+> **[Paper Title Will Be Updated]**
 
-该数据集一共有52个场景，共包含近28000个样本，覆盖城乡过渡带、港口、厂区、移动船体四类场景。空间维度设1.5m、20m、150m三个高度，对应地面、建筑、空中节点；频率覆盖500，900，1500，2000，3000，5000（MHz）共 6 个频段。对于每个场景，我们将发射源轨迹按2s时间分辨率进行离散化处理，单场景采样时长为100s，共计每个移动发射源生成50个连续位置序列。数据集采用512×512 网格，空间分辨率3m。
+The full citation will be provided after the paper is accepted and published.
 
-本项目中使用的所有数据集均可通过以下云存储连接访问：
+---
 
-- 百度云盘：[[链接]]()
+## Citation
 
-## 文件描述
+If you use RadioIndustryMap in your research, please cite our paper.
 
-- Building.zip
-  本压缩包内包含场景建筑空间分布信息。
-- vegetation.zip
-  本压缩包内包含场景植被空间分布信息。
-- way.zip
-  本压缩包内包含发射源的位置信息。
-  ###目录结构
-
-```
-dataset/
-├──500MHz/
-│├──1.5m/
-││├──npy/
-│││├──map1_t=0.npy
-│││├──...
-│││├──map1_t=49.npy
-│││└──...
-││├──png/
-│││├──map1_t=0.png
-│││├──...
-│││├──map1_t=49.png
-│││└──...
-││└──gif/
-│││├──map1.gif
-│││└──...
-│├──20m/
-││└──...
-│└──150m/
-││└──...
-├──900MHz/
-│└──...
-├──...
-├──Building.zip
-├──vegetation.zip
-└──way.zip
-```
-
-如对数据集使用有任何疑问，欢迎随时联系项目团队寻求进一步帮助。
+```bibtex
+@inproceedings{radioindustrymap2026,
+  title     = {RadioIndustryMap: A Large-Scale Dynamic Radio Map Dataset for Industrial Wireless Environments},
+  author    = {Author Names Will Be Updated},
+  booktitle = {IEEE ICC / IEEE GLOBECOM},
+  year      = {2026}
+}
