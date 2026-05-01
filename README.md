@@ -139,29 +139,6 @@ These receiver heights correspond to different industrial communication layers, 
 
 ---
 
-### 5. Large-Scale High-Fidelity Dataset
-
-The complete RadioIndustryMap dataset is designed to contain approximately:
-
-| Item | Description |
-|---|---|
-| Number of scenarios | Approximately 400 scenes |
-| Number of samples | Approximately 400,000 radio map samples |
-| Scenario types | Industrial plants, smart ports, offshore zones, moving-vessel scenarios |
-| Frequency bands | 11 frequency bands from 500 MHz to 5800 MHz |
-| Receiver heights | 5 heights: 1.5 m, 5 m, 10 m, 20 m, 60 m |
-| Temporal frames | 50 frames per dynamic sequence |
-| Time interval | 2 seconds |
-| Duration per sequence | 100 seconds |
-| Grid size | 512 × 512 |
-| Spatial resolution | 3 m per grid cell |
-| Physical coverage | 1536 m × 1536 m per radio map |
-| Data formats | `.npy`, `.png`, `.gif`, metadata files |
-
-The dataset is suitable for training, validating, and benchmarking learning-based radio map reconstruction methods under realistic industrial propagation conditions.
-
----
-
 ## Dataset Description
 
 RadioIndustryMap is organized by **scenario type**, **frequency band**, **receiver height**, and **temporal frame**. Each radio map sample corresponds to a specific industrial scene, carrier frequency, receiver height, and time index.
@@ -239,7 +216,7 @@ The following figures are placeholders. Please replace them with real images fro
 
 Representative sample data are currently available through the following cloud storage link:
 
-- Baidu Netdisk: [Sample data link will be updated]()
+- Baidu Netdisk: 
 
 The full RadioIndustryMap dataset will be released after the corresponding paper is accepted.
 
@@ -466,33 +443,6 @@ RadioIndustryMap/
 
 ---
 
-## Example Usage
-
-The following example shows how to load and visualize a radio map sample stored in `.npy` format.
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Load one radio map sample
-radio_map = np.load(
-    "RadioIndustryMap/Smart_Container_Port/500MHz/1.5m/npy/map1_1.5m_t=1.npy"
-)
-
-print("Radio map shape:", radio_map.shape)
-
-# Visualize the radio map
-plt.figure(figsize=(6, 5))
-plt.imshow(radio_map, origin="lower")
-plt.colorbar(label="Radio map value")
-plt.title("Example Radio Map")
-plt.xlabel("X grid index")
-plt.ylabel("Y grid index")
-plt.tight_layout()
-plt.show()
-```
-
----
 
 ## Recommended Research Tasks
 
@@ -514,50 +464,6 @@ RadioIndustryMap can support a wide range of research tasks, including:
 - Physics-informed radio environment modeling;
 - 6G IIoT network planning and optimization.
 
----
-
-## Data Split Recommendation
-
-The current sample release is mainly intended for format demonstration and preliminary testing. For the full dataset release, we recommend splitting the dataset by **scenario index** rather than randomly splitting individual temporal frames from the same sequence.
-
-For example:
-
-```text
-Training set:      map1   - map280
-Validation set:    map281 - map340
-Test set:          map341 - map400
-```
-
-For temporal prediction tasks, users may also split each sequence by time:
-
-```text
-Input frames:       t = 1, 2, ..., 40
-Prediction frames:  t = 41, 42, ..., 50
-```
-
-The final official split will be updated after the full dataset is released.
-
----
-
-## Benchmark
-
-We provide a preliminary benchmark using the classical **RadioUNet** model under an extremely sparse sampling condition.
-
-The mask ratio is set to:
-
-```text
-0.95
-```
-
-The benchmark results are:
-
-| Model | Mask Ratio | NMSE | PSNR | SSIM |
-|---|---:|---:|---:|---:|
-| RadioUNet | 0.95 | 0.7108 | 11.7047 | 0.5752 |
-
-The results show that industrial radio map reconstruction is significantly more challenging than conventional urban radio map reconstruction. The complex industrial geometry, heterogeneous material composition, strong metallic reflection, dynamic blockage, and non-stationary fading effects pose substantial challenges to existing learning-based methods.
-
-The benchmark results may be updated when the full dataset and official train/validation/test splits are released.
 
 ---
 
