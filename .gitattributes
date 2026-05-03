@@ -1,1 +1,6 @@
 port/** filter=lfs diff=lfs merge=lfs -text
+Factory filter=lfs diff=lfs merge=lfs -text
+Global_Index filter=lfs diff=lfs merge=lfs -text
+Offshore filter=lfs diff=lfs merge=lfs -text
+Port filter=lfs diff=lfs merge=lfs -text
+README.md filter=lfs diff=lfs merge=lfs -text
